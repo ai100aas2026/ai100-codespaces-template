@@ -6,39 +6,55 @@
   "customizations": {
     "vscode": {
       "settings": {
-        // --- CORE UI MINIMALISM ---
+        // =========================
+        // 🧼 FULL MINIMAL UI MODE
+        // =========================
         "workbench.activityBar.location": "hidden",
-        "workbench.sideBar.location": "right",
+        "workbench.sideBar.visible": false,
         "workbench.statusBar.visible": false,
+        "workbench.panel.defaultLocation": "hidden",
+
+        // =========================
+        // 🚫 FILE / NAVIGATION CLUTTER
+        // =========================
         "workbench.startupEditor": "none",
+        "explorer.openEditors.visible": 0,
+        "explorer.compactFolders": true,
 
-        // --- REMOVE DISTRACTIONS ---
-        "editor.minimap.enabled": false,
+        "outline.showFunctions": false,
         "breadcrumbs.enabled": false,
+
+        // =========================
+        // ✍️ EDITOR MINIMALISM
+        // =========================
+        "editor.minimap.enabled": false,
         "editor.glyphMargin": false,
+        "editor.folding": false,
+        "editor.lightbulb.enabled": false,
+        "editor.hover.enabled": false,
 
-        // --- TERMINAL CONTROL (IMPORTANT FOR YOUR USE CASE) ---
-        "terminal.integrated.defaultProfile.linux": "",
-        "terminal.integrated.tabs.enabled": false,
-
-        // --- CHAT-FIRST BEHAVIOR (Copilot Chat / Chat UI) ---
-        "github.copilot.chat.welcomeMessage": "never",
+        // =========================
+        // 💬 CHAT-FIRST EXPERIENCE
+        // =========================
         "chat.commandCenter.enabled": true,
 
-        // --- FILE VISIBILITY REDUCTION ---
-        "explorer.openEditors.visible": 0,
-        "explorer.compactFolders": true
+        // =========================
+        // 🧠 TERMINAL (VISUAL SUPPRESSION)
+        // =========================
+        "terminal.integrated.tabs.enabled": false,
+        "terminal.integrated.defaultProfile.linux": null,
+
+        // =========================
+        // 💾 PRODUCTIVITY DEFAULTS
+        // =========================
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 500
       },
 
       "extensions": [
-        "GitHub.copilot-chat",
-        "GitHub.copilot"
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
       ]
     }
-  },
-
-  // HARD BLOCK TERMINAL USAGE (partial, not perfect)
-  "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {}
   }
 }
