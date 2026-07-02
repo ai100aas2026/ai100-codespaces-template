@@ -1,15 +1,44 @@
 {
-    "name": "Research Template",
+  "name": "Agentic Coding Lab",
 
-    "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
 
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "workbench.activityBar.location": "hidden",
-                "workbench.startupEditor": "none",
-                "editor.minimap.enabled": false
-            }
-        }
+  "customizations": {
+    "vscode": {
+      "settings": {
+        // --- CORE UI MINIMALISM ---
+        "workbench.activityBar.location": "hidden",
+        "workbench.sideBar.location": "right",
+        "workbench.statusBar.visible": false,
+        "workbench.startupEditor": "none",
+
+        // --- REMOVE DISTRACTIONS ---
+        "editor.minimap.enabled": false,
+        "breadcrumbs.enabled": false,
+        "editor.glyphMargin": false,
+
+        // --- TERMINAL CONTROL (IMPORTANT FOR YOUR USE CASE) ---
+        "terminal.integrated.defaultProfile.linux": "",
+        "terminal.integrated.tabs.enabled": false,
+
+        // --- CHAT-FIRST BEHAVIOR (Copilot Chat / Chat UI) ---
+        "github.copilot.chat.welcomeMessage": "never",
+        "chat.commandCenter.enabled": true,
+
+        // --- FILE VISIBILITY REDUCTION ---
+        "explorer.openEditors.visible": 0,
+        "explorer.compactFolders": true
+      },
+
+      "extensions": [
+        "GitHub.copilot-chat",
+        "GitHub.copilot"
+      ]
     }
+  },
+
+  // HARD BLOCK TERMINAL USAGE (partial, not perfect)
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {}
+  }
 }
